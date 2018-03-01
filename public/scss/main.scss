@@ -1,4 +1,205 @@
 html,
 body {
   text-align: center;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+h1{
+  color: red;
+}
+
+#chartdiv {
+  width : 100%;
+  height  : 500px;
+}
+
+.main_wrapper {
+  margin: 0 0 0px 170px;
+}
+
+.graph_wrapper {
+  text-align: center;
+  display: 'block';
+}
+
+.dashboard_graph {
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+.dashboard_pie {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.dashboard_title {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  border-bottom: 1px solid;
+}
+
+.bottom_dashboard {
+  margin-top: 50px;
+}
+
+.table_wrapper{
+  height: 370px;
+  min-height: 370px;
+  overflow-y: scroll;
+}
+
+.positive_trend {
+  color: #00E676;
+}
+
+.negative_trend {
+  color: #EF5350;
+}
+
+.graph_buttons_wrapper {
+  position: absolute !important;
+  top: -14px;
+  right: 20px;
+}
+
+.graph_buttons_wrapper button {
+  font-size: 11px;
+  background-color: #0277BD;
+}
+
+.news_table tbody tr {
+  cursor: pointer;
+}
+
+.white_color {
+  color: #fff;
+}
+
+#chartdiv {
+
+}
+
+.right_border{
+  /* border-right: 1px solid #0277BD; */
+}
+
+.contrainer_padding {
+  padding: 20px 10px;
+}
+
+.trading_container_wrapper {
+  background: #000;
+  padding: 10px;
+}
+
+.graph_page_wrapper {
+  height: 91.5%;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.chart_wrapper {
+  margin-bottom: 30px;
+  padding: 0px !important;
+}
+
+.graph_title_wrapper {
+  margin-bottom: 10px;
+}
+
+.graph_title_wrapper h3 {
+  font-size: 16px;
+  display: inline;
+  color: #687d7e;
+  margin: 0;
+}
+
+.graph_title_wrapper h3 span{
+  font-size: 16px;
+}
+
+.graph_title_wrapper div {
+  display: inline;
+  float: right;
+}
+
+.chart_percentage {
+  color: red;
+  line-height: 17px;
+}
+
+.chart_price {
+  color: #687d7e;
+  margin-right: 45%;
+  line-height: 17px;
+}
+
+.react-stockchart {
+}
+
+.react-stockcharts-enable-interaction react-stockcharts-default-cursor {
+  color: #fff !important;
+  background: #fff !important;
+}
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.menuStyle div{
+  color: #fff
+}
+
+.grid_wrapper {
+  height: 100%;
+  padding-top: 20px;
+  background: #000;
+
+  div {
+
+    div {
+
+      h3 {
+        text-align: center;
+        margin-left: 210px;
+        color: #fff;
+        font-size: 18px;
+
+      }
+
+      span {
+
+        font-size: 12px;
+        line-height: 25px;
+        float: right;
+      }
+    }
+  }
+}
+
+.nav_bar {
+  position: fixed !important;
+}
+
+#tabs_wrapper {
+  height: 100%;
+  padding-top: 65px;
 }

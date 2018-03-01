@@ -1,33 +1,60 @@
-import React from 'react'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import request from 'superagent'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
+import Dashboard from './dashboard/Dashboard';
+import TradingCenter from './TradingCenter/TradingCenter';
 
-import Title from './title'
+import colors from '../consts/colors'
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  constructor() {
-    super()
-
-    this.state = { frame: 0 }
+    this.state = {
+      activeTab: 'TradingCenter'
+    };
   }
 
-  componentDidMount() {
-    console.log('React mounted!')
+  renderTabs () {
 
-    this.draw()
+    switch( this.state.activeTab ) {
+      case 'Dashboard':
+        return <Dashboard />
+      case 'TradingCenter':
+        return <TradingCenter />
+      default:
+        return <Dashboard />
+    }
   }
 
-  draw() {
-    requestAnimationFrame(::this.draw)
-    this.setState({ frame: this.state.frame + 1 })
+  switch_tabs(tab) {
+
+    this.setState({activeTab: tab})
   }
 
   render() {
     return (
-      <div className='header'>
-        <Title text='Hello World!' />
-        <p>Framecount: { this.state.frame }</p>
-      </div>
-    )
-  }
+      <MuiThemeProvider>
+        <div style={{backgroundColor: colors.color1, height: '100%'}}>
+          <AppBar className="nav_bar" style={{backgroundColor: colors.color1}} title="CRYPTO BOT" iconClassNameRight="muidocs-icon-navigation-expand-more" />
 
+          <Drawer docked={true} containerStyle={{backgroundColor: colors.color1, width: '180px', top: '65px', height: '100%', textAlign: 'left'}}>
+            <MenuItem className="menuStyle" onClick={this.switch_tabs.bind(this, 'Dashboard')}> Dashboard </MenuItem>
+            <MenuItem className="menuStyle" onClick={this.switch_tabs.bind(this, 'TradingCenter')}>Trading Center</MenuItem>
+            <MenuItem className="menuStyle">Purchase History</MenuItem>
+          </Drawer>
+
+          <div id="tabs_wrapper">
+            { this.renderTabs() }
+          </div>
+        </div>
+      </MuiThemeProvider>
+    );
+  }
 }
