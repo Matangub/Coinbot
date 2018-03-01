@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
   }
 
   request('https://api.bitfinex.com/v2/candles/trade:30m:tBTCUSD/hist', (err, response, body) => {
-      var data = JSON.parse(body).reverse();
+      var data = JSON.parse(body).reverse();//
       data.map( (item, index) => {
 				data[index] = {
           'id': index,
